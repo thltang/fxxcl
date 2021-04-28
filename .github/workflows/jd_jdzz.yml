@@ -38,6 +38,7 @@ jobs:
       - name: '运行jd_zz'
         run: |
           node jd_jdzz.js
+          node jd_syjnew.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
