@@ -17,9 +17,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          repository: hajiuhajiu/jdsign1112
-          ref: master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -36,16 +33,12 @@ jobs:
           npm install
       - name: '签到'
         run: |
-          curl https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_mi.js -o adolf_mi.js
           node adolf_mi.js
           sleep 1
-          curl https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js -o adolf_martin.js
           node adolf_martin.js
           sleep 1
-          curl https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js -o adolf_flp.js
           node adolf_flp.js
           sleep 1
-          curl https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js -o adolf_oneplus.js
           node adolf_oneplus.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
