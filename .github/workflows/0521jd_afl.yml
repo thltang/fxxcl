@@ -1,14 +1,14 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 0425jd_TCL
+name: 0521多签到
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 0 * * *'
+    - cron: '15 1 * 5,6 *'
   repository_dispatch:
-    types: health
+    types: 店铺签到相关
 jobs:
   build:
 
@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          repository: hajiuhajiu/jdsign1112
+          ref: master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -31,11 +34,19 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行'
+      - name: '签到'
         run: |
-          node jd_tcl.js 
-          
-          
+          curl https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_mi.js -o adolf_mi.js
+          node adolf_mi.js
+          sleep 1
+          curl https://raw.githubusercontent.com/monk-coder/dust/dust/normal/adolf_martin.js -o adolf_martin.js
+          node adolf_martin.js
+          sleep 1
+          curl https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_flp.js -o adolf_flp.js
+          node adolf_flp.js
+          sleep 1
+          curl https://raw.githubusercontent.com/monk-coder/dust/dust/member/adolf_oneplus.js -o adolf_oneplus.js
+          node adolf_oneplus.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
@@ -50,4 +61,3 @@ jobs:
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-
