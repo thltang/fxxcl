@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: hajiuhajiu/jdsign1112
+          repository: bingjuanshijie/hajiuhajiu-jdsign1112
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -45,7 +45,7 @@ jobs:
             sleep 1m
           done
           node jd_bookshop.js
-          sleep 5m
+          sleep 1m
           node jd_car.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
