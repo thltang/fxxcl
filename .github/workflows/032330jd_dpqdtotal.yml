@@ -18,7 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: hajiuhajiu/jdsign1112
+          repository: inoyna11/jd28
           ref: master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -37,13 +37,13 @@ jobs:
       - name: '签到'
         run: |
 
-          curl https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/jd_shop_follow_sku.js -o jd_shop_follow_sku.js
+          curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_shop_follow_sku.js -o jd_shop_follow_sku.js
           node jd_shop_follow_sku.js
           sleep 5
-          curl https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/jd_shop_lottery.js -o jd_shop_lottery.js
+          curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_shop_lottery.js -o jd_shop_lottery.js
           node jd_shop_lottery.js
           sleep 5
-          curl https://raw.githubusercontent.com/hajiuhajiu/jdsign1112/master/jd_skyworth.js -o jd_skyworth.js
+          curl https://raw.githubusercontent.com/inoyna11/jd28/master/jd_skyworth.js -o jd_skyworth.js
           node jd_skyworth.js
           
         env:
