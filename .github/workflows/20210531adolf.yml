@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: hajiuhajiu/jdsign1112
+          repository: inoyna11/jd28
           ref: master
      - name: Use Node.js 15.x
        uses: actions/setup-node@v1
