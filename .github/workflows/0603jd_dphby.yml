@@ -40,6 +40,7 @@ jobs:
       - name: '运行'
         run: |
           node jd_dphby.js
+          node jay_member_olb.js
          
           
         env:
