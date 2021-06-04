@@ -30,7 +30,7 @@ jobs:
           npm install
      - name: 'jd_super_box'
        run: |
-          node jd_super_box.js
+          node adolf_superbox.js
           
        env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
