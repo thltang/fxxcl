@@ -41,7 +41,8 @@ jobs:
         run: |
           node jd_dphby.js
           node jay_member_olb.js
-         
+          node jd_gcip.js
+          node jd_jxlhb.js
           
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
